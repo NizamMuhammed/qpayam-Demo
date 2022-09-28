@@ -9,6 +9,7 @@
   padding-right: 1rem;
   cursor: pointer;
   flex: 4;
+  text-decoration: none;
 }
 
 .login {
@@ -19,4 +20,8 @@
 .register {
   padding-right: 1rem;
   cursor: pointer;
+}
+
+.linkStyle {
+  text-decoration: none;
 }
