@@ -1,0 +1,22 @@
+.header {
+  background-color: #ffc947;
+  display: flex;
+  padding: 1.5rem;
+  font-size: 20px;
+}
+
+.home {
+  padding-right: 1rem;
+  cursor: pointer;
+  flex: 4;
+}
+
+.login {
+  padding-right: 1rem;
+  cursor: pointer;
+}
+
+.register {
+  padding-right: 1rem;
+  cursor: pointer;
+}
