@@ -6,6 +6,7 @@ import Footer from "./components/Footer"
 import Homepage from "./pages/Homepage"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import PageNotFound from "./pages/404ErrorPage"
 
 /* react-router-dom is used for Navigation
  * Version number is important as it may cause errors while navigating
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
         <Footer />
