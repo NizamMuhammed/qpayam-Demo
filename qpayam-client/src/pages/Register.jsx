@@ -33,7 +33,7 @@ const Register = () => {
                 className="inputField"
                 type="text"
                 name="name"
-                onChange={handleChange}
+                onChange={handleChange("name")}
               ></input>
             </div>
             <div className="inputContainer">
@@ -41,7 +41,7 @@ const Register = () => {
               <input
                 placeholder="Enter your Email"
                 className="inputField"
-                onChange={handleChange}
+                onChange={handleChange("email")}
               ></input>
             </div>
             <div className="inputContainer">
@@ -49,7 +49,7 @@ const Register = () => {
               <input
                 placeholder="Enter your Password"
                 className="inputField"
-                onChange={handleChange}
+                onChange={handleChange("password")}
               ></input>
             </div>
           </div>
