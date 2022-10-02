@@ -1,0 +1,72 @@
+.mainContainer {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundContainer {
+  width: 60%;
+  height: 70%;
+  background-color: #0a1931;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.formContainer {
+  padding: 1rem;
+  text-align: center;
+}
+
+.signupTitle {
+  color: white;
+}
+
+.inputMainContainer {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.inputContainer {
+  margin: 5px;
+}
+
+.inputText {
+  color: white;
+  margin-right: 20px;
+}
+
+.submitButton {
+  margin: 10px;
+  background-color: whitesmoke;
+}
+
+.inputField {
+  height: 2rem;
+  border-radius: 0.5rem;
+  width: 15rem;
+  padding-left: 1rem;
+}
+
+.submitButton {
+  width: 10rem;
+  padding: 0.5rem;
+  font-size: 20px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  width: 10rem;
+  padding: 0.5rem;
+  font-size: 20px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  opacity: 0.8;
+  background-color: yellow;
+}

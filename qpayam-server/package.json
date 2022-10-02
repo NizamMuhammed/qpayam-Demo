@@ -1,0 +1,16 @@
+{
+  "name": "qpayam-server",
+  "version": "1.0.0",
+  "description": "Qpayam server using Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "type": "module",
+  "author": "Mohammed Nizam P N",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  }
+}
