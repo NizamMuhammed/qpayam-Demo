@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import crypto from "crypto"
 
 /**
  * Schema configuration
@@ -51,3 +52,39 @@ const userSchema = mongoose.Schema(
   },
   { timestamps: true }
 )
+
+//Create virtual fields to manage password encryption
+userSchema
+  .virtual("password")
+  .set(function (password) {
+    //Create temp variable for storing password from client
+    this._password = password
+    //Generate Salt
+    this.salt = this.makeSalt()
+    //Encrypt password
+    this.hashedPassword = this.encryptPassword(password)
+  })
+  .get(function () {
+    return this._password
+  })
+
+//Create methods to authenticate, encrypt and make salt
+userSchema.methods = {
+  encryptPassword: function (password) {
+    if (!password) return ""
+    try {
+      return crypto.createHmac("sha1", this.salt).update(password).digest("hex")
+    } catch (err) {
+      console.log("userSchema encryption error: ", err)
+      return ""
+    }
+  },
+  makeSalt: function () {
+    return Math.round(new Date().valueOf() * Math.random()) + ""
+  },
+  authenticate: function (plainText) {
+    return this.encryptPassword(plainText) === this.hashedPassword
+  },
+}
+
+export default mongoose.model("User", userSchema)
