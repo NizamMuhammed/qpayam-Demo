@@ -1,4 +1,5 @@
 import express from "express"
+import routes from "./routes/auth.js" //import Auth routes
 
 const app = express()
 /* Express is the Request-Response Handler
@@ -6,11 +7,9 @@ const app = express()
  * nodemon is used to restart the server after each change
  */
 
-app.get("/api/register", (req, res) => {
-  res.json({
-    data: "You just hit the Register endpoint",
-  })
-})
+//Middlewares
+
+app.use("/api", routes) //endpoint starts with '/api/
 
 const port = process.env.PORT || 8000
 
