@@ -1,5 +1,5 @@
 import express from "express"
-import routes from "./routes/auth.js" //import Auth routes
+import { routes as authRoute } from "./routes/auth.js" //import Auth routes
 import morgan from "morgan"
 import bodyParser from "body-parser"
 import cors from "cors"
@@ -16,10 +16,15 @@ const app = express()
 
 //Middlewares
 
-app.use("/api", routes) //endpoint starts with '/api/
 app.use(morgan("dev"))
 app.use(bodyParser.json())
-app.use(cors())
+//app.use(cors()) //accept api calls from all domains
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+  })
+) //accept API calls from client only
+app.use("/api", authRoute) //endpoint starts with '/api/
 
 const port = process.env.PORT || 8000
 

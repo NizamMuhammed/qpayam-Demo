@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "../styles/Register.css"
+import axios from "axios"
 
 const Register = () => {
   const [stateValues, setStateValues] = useState({
@@ -20,10 +21,22 @@ const Register = () => {
     })
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault() //prevent page reload
+    axios
+      .post(`http://localhost:8000/api/register`, {
+        name: stateValues.name,
+        email: stateValues.email,
+        password: stateValues.password,
+      })
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err))
+  }
+
   return (
     <div className="mainContainer">
       <div className="backgroundContainer">
-        <form className="formContainer">
+        <form className="formContainer" onSubmit={handleSubmit}>
           <h1 className="signupTitle">Signup</h1>
           <div className="inputMainContainer">
             <div className="inputContainer">
